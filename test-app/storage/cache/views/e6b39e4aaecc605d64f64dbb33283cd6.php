@@ -30,7 +30,7 @@ use FFramework\Core\Kernel;
     <div class="container mx-auto h-screen">
         <div class="w-full h-screen flex-col flex items-center justify-center">
             <div class="w-full md:w-[800px]">
-                <h1 class="ffonts-exo2 text-3xl font-normal mb-2 ml-1">FFramework for PHP-8.1.0</h1>
+                <h1 class="ffonts-exo2 text-3xl font-normal mb-2 ml-1">FFramework for PHP7.0+ - 8.5+</h1>
             </div>
 
             <div class="w-full md:w-[800px] bg-red-500 h-[300px] md:rounded border-0 flex flex-col shadow-md shadow-slate-400">

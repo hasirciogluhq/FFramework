@@ -1,6 +1,6 @@
 <?php
 
-namespace app\database;
+namespace FFramework\Database;
 
 use mysql_xdevapi\Exception;
 use PDO;
