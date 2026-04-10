@@ -46,7 +46,7 @@ use FFramework\Core\Kernel;
     </div>
 
     <main class="relative z-10">
-        <div class="mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-4 py-16 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-5xl px-4 pb-20 pt-16 sm:px-6 sm:pt-20 lg:px-8">
             <header class="mb-12 text-center sm:mb-14">
                 <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-red-500/25 bg-zinc-900/60 px-3 py-1 text-xs font-medium text-red-300/90 shadow-depth-sm backdrop-blur-md">
                     <span class="h-1.5 w-1.5 rounded-full bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.9)]" aria-hidden="true"></span>
@@ -56,7 +56,7 @@ use FFramework\Core\Kernel;
                     FFramework
                 </h1>
                 <p class="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-zinc-400 sm:text-base">
-                    Clear routing, views, and room to grow — a calm, productive foundation for PHP apps.
+                    Clear routing, views, and room to grow a calm, productive foundation for PHP apps.
                 </p>
             </header>
 
@@ -73,7 +73,7 @@ use FFramework\Core\Kernel;
                     <div class="absolute right-4 top-4 h-16 w-16 rounded-full bg-red-500/10 blur-2xl transition group-hover:bg-red-500/20" aria-hidden="true"></div>
                     <h2 class="ffonts-nunito relative text-lg font-semibold text-white">Storage &amp; htaccess</h2>
                     <p class="relative mt-3 text-sm leading-relaxed text-zinc-400">
-                        Although there was an htaccess file in the past, route flow was brittle. Now it works with a minimal .htaccess — predictable storage and routing.
+                        Although there was an htaccess file in the past, route flow was brittle. Now it works with a minimal .htaccess predictable storage and routing.
                     </p>
                 </article>
 
@@ -81,7 +81,7 @@ use FFramework\Core\Kernel;
                     <div class="absolute right-4 top-4 h-16 w-16 rounded-full bg-red-500/10 blur-2xl transition group-hover:bg-red-500/20" aria-hidden="true"></div>
                     <h2 class="ffonts-nunito relative text-lg font-semibold text-white">Route Management</h2>
                     <p class="relative mt-3 text-sm leading-relaxed text-zinc-400">
-                        Route logic was corrected and improved. Readable groups and parameters — more useful features keep landing in this version.
+                        Route logic was corrected and improved. Readable groups and parameters  more useful features keep landing in this version.
                     </p>
                 </article>
 
@@ -130,7 +130,7 @@ use FFramework\Core\Kernel;
                                 <li><a href="https://instagram.com/m.hasirciogli" target="_blank" rel="noopener noreferrer" class="transition hover:text-red-400">Instagram</a></li>
                                 <li><a href="https://www.facebook.com/hasirciogli" target="_blank" rel="noopener noreferrer" class="transition hover:text-red-400">Facebook</a></li>
                                 <li><a href="https://twitter.com/hasirciogli" target="_blank" rel="noopener noreferrer" class="transition hover:text-red-400">Twitter</a></li>
-                                <li><a href="https://discord.gg/y38CZgHMMq" target="_blank" rel="noopener noreferrer" class="transition hover:text-red-400">Discord — Noxy#1881</a></li>
+                                <li><a href="https://discord.gg/y38CZgHMMq" target="_blank" rel="noopener noreferrer" class="transition hover:text-red-400">Discord  Noxy#1881</a></li>
                             </ul>
                         </div>
                         <div>
