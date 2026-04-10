@@ -209,6 +209,8 @@ class Router
                     continue;
                 }
 
+                $request->mergeRouteParams($this->params);
+
                 // Middleware pipeline
                 foreach ($route->middlewares as $mw) {
                     $result = $this->runMiddleware($mw, $this->params, $request);

@@ -2,8 +2,6 @@
 
 namespace FFramework\Http;
 
-use FFramework\Router\Router;
-
 class Request
 {
     public string $method;
@@ -12,6 +10,8 @@ class Request
     public string $body;
     public array $query;
     public array $params;
+    /** @var array<string, string|null> Eşleşen route URL parametreleri (:id, {id} vb.) */
+    private array $routeParams = [];
     public array $files;
     public array $cookies;
     public array $session;
@@ -67,9 +67,30 @@ class Request
     {
         return $this->params;
     }
+
+    /**
+     * Router tarafından eşleşen path parametrelerini bağlar (POST ile karışmaz).
+     */
+    public function mergeRouteParams(array $params): void
+    {
+        $this->routeParams = $params;
+    }
+
+    public function getRouteParams(): array
+    {
+        return $this->routeParams;
+    }
+
     public function getParam(string $name): string
     {
-        return $this->params[$name] ?? '';
+        if (array_key_exists($name, $this->routeParams)) {
+            $v = $this->routeParams[$name];
+            return $v !== null && $v !== '' ? urldecode((string) $v) : '';
+        }
+
+        return isset($this->params[$name])
+            ? (is_scalar($this->params[$name]) ? (string) $this->params[$name] : '')
+            : '';
     }
 
     public function getFiles(): array
