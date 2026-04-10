@@ -321,7 +321,7 @@ class Router
     private function runHandler(mixed $handler, ...$args): void
     {
         if (is_callable($handler)) {
-            $handler(...$args);
+            call_user_func($handler, ...$args);
             return;
         }
 

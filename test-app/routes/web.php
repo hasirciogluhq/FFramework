@@ -1,5 +1,6 @@
 <?php
 
+use FFramework\Http\Request;
 use FFramework\Router\Router;
 use FFramework\View\View as FFrameworkView;
 
@@ -20,12 +21,12 @@ return function (Router $router): void {
             echo "Hello bro";
         });
 
-        $group->get("bro/:name", function ($params, Router $router) {
-            echo "Hello bro " . $router->getParam("name");
+        $group->get("bro/:name", function ($params, Request $request) {
+            echo "Hello bro " . $request->getParam("name") . " | => ";
         });
 
-        $group->get("bro/:name/comein", function ($params, Router $router) {
-            echo "Hello bro " . $router->getParam("name") . " Welcome Back! come in >";
+        $group->get("bro/:name/comein", function ($params, Request $request) {
+            echo "Hello bro " . $request->getParam("name") . " Welcome Back! come in >";
         });
     });
 };

@@ -67,6 +67,10 @@ class Request
     {
         return $this->params;
     }
+    public function getParam(string $name): string
+    {
+        return $this->params[$name] ?? '';
+    }
 
     public function getFiles(): array
     {
