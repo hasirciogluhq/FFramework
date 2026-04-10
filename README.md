@@ -8,6 +8,8 @@
 
 [![PHP](https://img.shields.io/badge/PHP-8.1%2B-DC2626?style=flat-square&logo=php&logoColor=white)](https://www.php.net/)
 [![Composer](https://img.shields.io/badge/composer-2.x-27272a?style=flat-square&logo=composer&logoColor=white)](composer.json)
+[![Packagist](https://img.shields.io/badge/Packagist-hasirciogluhq%2Ffframework-18181b?style=flat-square&logo=packagist&logoColor=white)](https://packagist.org/packages/hasirciogluhq/fframework)
+[![License](https://img.shields.io/badge/license-MIT-18181b?style=flat-square)](LICENSE)
 
 </div>
 
@@ -26,7 +28,7 @@ FFramework, web uygulamaları için **sade bir PHP iskeleti** sunar: yönlendirm
 | Alan               | Açıklama                                                            |
 | ------------------ | ------------------------------------------------------------------- |
 | **Routing**        | Grup, parametre, `Request` ile uyumlu handler imzaları              |
-| **Views**          | Derlenen şablonlar, `test-app/Resources/Views` altında örnek arayüz |
+| **Views**          | Derlenen şablonlar, `test-app/resources/views` altında örnek arayüz |
 | **HTTP**           | `Request` üzerinde sorgu, gövde ve route parametreleri              |
 | **Veritabanı**     | PDO tabanlı `FFramework\Database\DB` (bkz. `src/database/DB.php`)   |
 | **Test altyapısı** | `phpunit/phpunit` (dev bağımlılık)                                  |
@@ -42,20 +44,53 @@ FFramework, web uygulamaları için **sade bir PHP iskeleti** sunar: yönlendirm
 
 ## Kurulum
 
+### Mevcut projeye paket olarak (önerilen)
+
+[Packagist](https://packagist.org) üzerinde paket adı: **`hasirciogluhq/fframework`**. GitHub organizasyonu / repo adı farklıysa `composer.json` içindeki `name` alanını buna göre güncelle. Depoyu Packagist’e [Submit](https://packagist.org/packages/submit) ile ekledikten sonra:
+
 ```bash
-git clone <repo-url> FFramework
-cd FFramework
+composer require hasirciogluhq/fframework
+```
+
+Sonra kendi uygulamanızda `vendor/autoload.php` yükleyip `ROOT_PATH` (uygulama kökü), `routes/`, `resources/views`, `storage/cache/views` gibi dizinleri tanımlayın; örnek akış için aşağıdaki `test-app` giriş dosyasına bakın.
+
+### Bu depoyu klonlayarak (geliştirme / örnek uygulama)
+
+```bash
+git clone https://github.com/hasirciogluhq/fframework.git
+cd fframework
 composer install
 ```
 
-Örnek uygulama için `test-app` içindeki yapıyı referans al: `public/index.php`, `routes/web.php`, yapılandırma dosyaları.
+Örnek uygulama: `test-app/public/index.php` → `vendor` üst dizinde (`../vendor/autoload.php`).
 
-Yerel sunucu (örnek):
+Yerel sunucu:
 
 ```bash
 cd test-app
 php -S localhost:8000 -t public public/index.php
 ```
+
+### Paket doğrulama
+
+```bash
+composer validate --strict
+```
+
+---
+
+## Üretim hazırlığı (özet değerlendirme)
+
+| Konu | Durum | Not |
+|------|--------|-----|
+| **Çekirdek HTTP / routing** | Kısmen | İstek yaşam döngüsü çalışır; hata yanıtları JSON içinde dosya/satır dökebilir — prod’da `DEBUG=false` ve özel 500 handler şart. |
+| **Hata gösterimi** | Dikkat | `Kernel` prod’da `display_errors` kapalı; yine de yakalanan istisnaların içeriği log’a ayrı yazılmalı, kullanıcıya genel mesaj verilmeli. |
+| **Veritabanı (`DB`)** | Riskli | `configs_db_*` sabitleri tanımlı değilse sınıf yüklemesi hata verir; bağlantı hatasında `die()` kullanılıyor. Üretim için env tabanlı yapılandırma ve istisna yönetimi gerekir. |
+| **Oturum** | Bilinçli seçim | Her `Request` ile `session_start()` — API-only projelerde kapatılmalı veya lazy olmalı. |
+| **Güvenlik başlıkları / CSRF / rate limit** | Yok | Uygulama katmanında veya ters proxy (nginx) ile eklenmeli. |
+| **Yayınlama** | Standart | Web kökü yalnızca `public/`; `storage` yazılabilir, kod kökü dışarı açılmamalı. |
+
+**Sonuç:** Kütüphane / iskelet olarak **erken aşama**; üretim öncesi yukarıdaki maddeler netleştirilmeden “tam hazır” sayılmamalı.
 
 ---
 
@@ -73,8 +108,7 @@ docs/assets/      # README banner (SVG)
 
 - **API / doküman:** yakında — şimdilik kaynak kod ve `test-app` örnekleri ana referans.
 - **E-posta:** [mhasirciogli@gmail.com](mailto:mhasirciogli@gmail.com)
-- **Sosyal:** [Instagram](https://instagram.com/m.hasirciogli) · [Facebook](https://www.facebook.com/hasirciogli) · [Twitter/X](https://twitter.com/hasirciogli) · [Discord](https://discord.gg/y38CZgHMMq)
-- **İlgili proje:** [php-rest-api SDK](https://github.com/hasirciogli/php-rest-api) (gelecek sürümlerle uyum hedefi)
+- **Sosyal:** [Instagram](https://instagram.com/hasirciogluhq) · [Facebook](https://www.facebook.com/hasirciogluhq) · [Twitter/X](https://twitter.com/hasirciogluhq) · [Discord](https://discord.gg/y38CZgHMMq)
 
 ---
 

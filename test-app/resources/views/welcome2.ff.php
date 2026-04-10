@@ -89,15 +89,6 @@ use FFramework\Core\Kernel;
                         Route logic was corrected and improved. Readable groups and parameters more useful features keep landing in this version.
                     </p>
                 </article>
-
-                <article class="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900/40 p-5 shadow-depth-md backdrop-blur-sm transition duration-200 ease-out hover:border-red-500/30 hover:shadow-depth-lg hover:shadow-glow-red sm:p-6">
-                    <div class="absolute right-4 top-4 h-16 w-16 rounded-full bg-red-500/10 blur-2xl transition group-hover:bg-red-500/20" aria-hidden="true"></div>
-                    <h2 class="ffonts-nunito relative text-lg font-semibold text-white">REST API SDK</h2>
-                    <p class="relative mt-3 text-sm leading-relaxed text-zinc-400">
-                        REST API SDK from the same author will ship in a future update. Browse the project on
-                        <a href="https://github.com/hasirciogli/php-rest-api" target="_blank" rel="noopener noreferrer" class="font-medium text-red-400 underline decoration-red-500/40 underline-offset-2 transition hover:text-red-300">GitHub</a>.
-                    </p>
-                </article>
             </div>
 
             <!-- Zarif Ayırıcı Çizgi -->
@@ -124,22 +115,21 @@ use FFramework\Core\Kernel;
                         <div>
                             <h2 class="mb-4 text-xs font-bold uppercase tracking-widest text-zinc-300">Document</h2>
                             <ul class="space-y-3 text-sm text-zinc-500">
-                                <li><a href="#" class="transition hover:text-red-400">API Documentations</a></li>
+                                <li><a href="https://github.com/hasirciogluhq/fframework" class="transition hover:text-red-400">API Documentations</a></li>
                             </ul>
                         </div>
                         <div>
                             <h2 class="mb-4 text-xs font-bold uppercase tracking-widest text-zinc-300">Contact</h2>
                             <ul class="space-y-3 text-sm text-zinc-500">
                                 <li><a href="mailto:mhasirciogli@gmail.com" class="transition hover:text-red-400">Email Us</a></li>
-                                <li><a href="#" class="transition hover:text-red-400">+90 555 890 98 99</a></li>
                             </ul>
                         </div>
                         <div>
                             <h2 class="mb-4 text-xs font-bold uppercase tracking-widest text-zinc-300">Follow</h2>
                             <ul class="space-y-3 text-sm text-zinc-500">
-                                <li><a href="https://instagram.com/m.hasirciogli" target="_blank" rel="noopener noreferrer" class="transition hover:text-red-400">Instagram</a></li>
-                                <li><a href="https://www.facebook.com/hasirciogli" target="_blank" rel="noopener noreferrer" class="transition hover:text-red-400">Facebook</a></li>
-                                <li><a href="https://twitter.com/hasirciogli" target="_blank" rel="noopener noreferrer" class="transition hover:text-red-400">Twitter</a></li>
+                                <li><a href="https://instagram.com/hasirciogluhq" target="_blank" rel="noopener noreferrer" class="transition hover:text-red-400">Instagram</a></li>
+                                <li><a href="https://www.facebook.com/hasirciogluhq" target="_blank" rel="noopener noreferrer" class="transition hover:text-red-400">Facebook</a></li>
+                                <li><a href="https://twitter.com/hasirciogluhq" target="_blank" rel="noopener noreferrer" class="transition hover:text-red-400">Twitter</a></li>
                             </ul>
                         </div>
                         <div>
